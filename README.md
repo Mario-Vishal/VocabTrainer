@@ -1,7 +1,7 @@
 # VocabTrainer
 A web application to train your vocabulary.
 
-Featuers
+Features
 - Flashcards of sets of 50 each.
 - Can update, delete, bookmark a flashcard.
 - When revising a set, all cards are jumbled.
