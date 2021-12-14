@@ -1,0 +1,13 @@
+{% extends 'vocab_trainer/base.html' %}
+<!-- {% include 'partials/_navbar.html' %} -->
+
+{% block addpage %}
+
+<form action="{% url 'addword' %}" method="POST">
+    {% csrf_token %}
+    {% include 'partials/_vocab_input.html' %}
+    <input type="submit" value="add" class="add-button">
+    </div>
+</form>
+
+{% endblock %}

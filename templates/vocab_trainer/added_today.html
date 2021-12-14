@@ -1,0 +1,17 @@
+{% extends 'vocab_trainer/base.html' %}
+
+{% block addedtoday %}
+
+    <h2 class="page-header">Total of {{total_count}} words were added today!</h2>
+
+    <div class="card-flex">
+
+    
+    {% for card in cards %}
+
+        {% include 'partials/_bmk_edit_card.html' %}
+    
+    {% endfor %}
+    
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<div class="home-card-deck card-flex">
+    {% for card in cards %}
+    <a href="{% url 'worddetail' card.id %}">
+    <div class="home-card">
+        
+            <div class="vocab-card-title vocab-card-home">
+                <h2>{{card.vocab_word}}</h2>
+            </div>
+            
+    </div>
+    </a>
+
+    {% endfor %}
+</div>
+

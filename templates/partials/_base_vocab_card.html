@@ -1,0 +1,41 @@
+{% load static %}
+<div class="vocab-card-main">
+
+
+        <div class="vocab-card">
+            <div class="vocab-card-title vocab-card">
+                <h2>{{card.vocab_word}}</h2>
+            </div>
+            <div class="vocab-card-pos vocab-card">
+                <p>( {{card.vocab_pos}} )</p>
+            </div>
+            <div class="vocab-card-meaning vocab-card">
+                <h2>{{card.vocab_meaning}}</h2>
+            </div>
+            <hr class="divider">
+            <div class="vocab-card-sentence vocab-card">
+                <h3><i>{{card.vocab_sentence}}</i></h3>
+            </div>
+            
+            {% if card.vocab_synonyms %}
+            <hr class="divider">
+            <div class="vocab-card-synonyms vocab-card">
+                
+                <h4>{{card.vocab_synonyms}}</h4>
+            </div>
+                {% else %}
+                {% endif %}
+            <br>
+            <div class="vocab-card-date vocab-card">
+                <p>{{card.date_added}}</p>
+            </div>
+        </div>
+
+        {% block bmk_edit %}
+        {% endblock %}
+        
+    </div>
+    
+<!-- </div> -->
+   
+    

@@ -1,0 +1,57 @@
+<div class="flip-card">
+    <div class="flip-card-inner">
+
+        <div class="flip-card-front">
+            <h2>{{card.vocab_word}}</h2>
+        </div>
+      <div class="flip-card-back">
+            <div class="vocab-card-title vocab-card">
+                <h2>{{card.vocab_word}}</h2>
+            </div>
+            <div class="vocab-card-pos vocab-card">
+                <p>( {{card.vocab_pos}} )</p>
+            </div>
+            <div class="vocab-card-meaning vocab-card">
+                <h2>{{card.vocab_meaning}}</h2>
+            </div>
+            {% if card.vocab_sentence %}
+            <hr class="divider">
+            <div class="vocab-card-sentence vocab-card">
+                <h3><i>{{card.vocab_sentence}}</i></h3>
+            </div>
+            {% else %}
+            {% endif %}
+            {% if card.vocab_synonyms %}
+            <hr class="divider">
+            <div class="vocab-card-synonyms vocab-card">
+                
+                <h3>{{card.vocab_synonyms}}</h3>
+            </div>
+                {% else %}
+                {% endif %}
+            
+            <div class="vocab-card-date vocab-card">
+                <p>{{card.date_added}}</p>
+            </div>
+            <br>
+
+            <div class="edit-bmk-button-area">
+        
+                <form  action="{% url 'bookmark' card.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="bookmark-button card-btn"">bookmark</button>
+                </form>
+            
+           
+                <form class="edit-div" action="{% url 'edit_delete' card.id %}" method="GET">
+                    {% csrf_token %}
+                    <button class="card-btn"">edit</button>
+                </form>
+            
+        
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>

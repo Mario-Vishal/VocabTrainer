@@ -1,0 +1,20 @@
+{% extends 'vocab_trainer/base.html' %}
+
+
+{% block editpage %}
+    <form action="{% url 'edit_delete' card_id %}" method="POST">
+    {% csrf_token %}
+   
+    {% include 'partials/_vocab_input.html' %}
+    
+    <button class="card-btn" type="submit">update</button>
+   
+    </form>
+    <form action="{% url 'delete_word' card_id %}" method="POST">
+        {% csrf_token %}
+        <button class="card-btn">
+            delete
+        </button>
+    </form>
+    </div>
+{% endblock %}

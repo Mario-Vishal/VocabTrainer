@@ -1,0 +1,13 @@
+{% extends 'vocab_trainer/base.html' %}
+
+{% block bookmarkpage %}
+<h1 class="page-header">Bookmarked</h1>
+
+<form class="revise-again-bmk" action="{% url 'set' set_number %}">
+    {% csrf_token %}
+    <button class="revise-again-bmk-btn" type="submit">REVISE BOOKMARKED</button>
+</form>
+
+    {% include 'partials/_bmk_view_card.html'%}
+
+{% endblock %}

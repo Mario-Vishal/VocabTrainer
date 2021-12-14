@@ -1,0 +1,54 @@
+{% load hotkeys %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    {% setup_hotkeys %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocab_Trainer</title>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flip.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+</head>
+<body>
+    {% include 'partials/_navbar.html' %}
+
+    {% block homepage %}
+    {% endblock %}
+
+    {% block addpage %}
+    {% endblock %}
+
+    {% block editpage %}
+    {% endblock %}
+
+    {% block detail %}
+    {% endblock %}
+
+    {% block bookmarkpage %}
+    {% endblock %}
+
+    {% block search_page %}
+    {% endblock %}
+
+    {% block card_slider %}
+    {% endblock %}
+
+    {% block addedtoday %}
+    {% endblock %}
+
+    {% block set_page %}
+    {% endblock %}
+
+    {% block set_specific %}
+    {% endblock %}
+
+    
+</body>
+</html>

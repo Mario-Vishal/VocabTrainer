@@ -1,0 +1,39 @@
+{% extends 'vocab_trainer/base.html' %}
+
+{% block set_page %}
+{% if set_words %}
+<div class="set-page">
+{% if today_exists %}
+<form method="POST" action="{% url 'set' 0 %}">
+    <button class="set-card" type="submit">
+    {% csrf_token %}
+    
+    <h3>REVISE TODAY's ADDED WORDS</h3>
+    <!-- <p><i>first word :</i></p>
+    <h4>{{set_word.1}}</h4> -->
+</button>
+</form>
+{% else %}
+{% endif %}
+{% for set_word in set_words %}
+
+<!-- <div class="vocab-card-main"> -->
+    
+<form method="POST" action="{% url 'set' set_word.0 %}">
+    <button class="set-card" type="submit">
+    {% csrf_token %}
+    
+    <h3>SET {{set_word.0}}</h3>
+    <p><i>first word :</i></p>
+    <h4>{{set_word.1}}</h4>
+</button>
+</form>
+
+<!-- </div> -->
+
+{% endfor %}
+</div>
+{% else %}
+<h1 class="page-header">No words added, add them to form sets</h1>
+{% endif %}
+{% endblock %}

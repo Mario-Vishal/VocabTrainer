@@ -1,0 +1,55 @@
+{% extends 'vocab_trainer/base.html' %}
+
+{% block card_slider %}
+
+<div class="count-display">
+    <h3 >{{current_count}} off {{total_count}} revised</h3>
+</div>
+
+<div class="card-slider-btn-prev">
+    <form action="{% url 'prev' card_prev_id %}">
+        
+        {% if prev < 0 %}
+        <button class="prev-btn slider-btn" type="submit" disabled>prev</button>
+        {% else %}
+        <button class="prev-btn slider-btn" type="submit">prev</button>
+        {% endif %}
+    </form>
+</div>
+
+{% include 'partials/_flip_card.html' %}
+
+
+<div class="card-slider-btn-next">
+    <form action="{% url 'next' card_next_id %}">
+        
+        {% if next_ < 0 %}
+        <button class="next-btn slider-btn" type="submit" disabled>next</button>
+        {% else %}
+        <button class="next-btn slider-btn" type="submit">next</button>
+    
+        {% endif %}        
+    </form>
+
+</div>
+
+{% if next_ < 0 %}
+
+
+    <form class="revise-again" action="{% url 'set' set_number %}">
+        {% csrf_token %}
+        <button class="revise-again-btn" type="submit">REVISE AGAIN</button>
+    </form>
+
+    
+
+
+{% else %}
+{% endif %}
+
+
+
+
+
+
+{% endblock %}

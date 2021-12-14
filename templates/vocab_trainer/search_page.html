@@ -1,0 +1,38 @@
+{% extends 'vocab_trainer/base.html' %}
+
+
+{% block search_page %}
+
+<div class="search-box">
+
+<form class="search-form" action="{% url 'search' %}" method="POST">
+    {% csrf_token %}
+    <input class="search-input" autofocus="autofocus" type="text" placeholder="search for a word" name="search_index" value={{term}}>
+    <button class="search-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <br>
+    <input type="checkbox" name="search_sentence" id=""> <h3>search in meaning of the word too?</h3>
+</form>
+
+</div>
+
+{% if cards%}
+<h4 class="page-header">found {{len}} results</h4>
+
+<div class="card-flex">
+
+    
+    {% for card in cards %}
+
+        {% include 'partials/_bmk_edit_card.html' %}
+    
+    {% endfor %}
+    
+</div>
+
+
+
+{% else %}
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<div class="home-card-deck card-flex">
+    {% for card in cards %}
+    
+    <div class="home-card bmk-home-card">
+        <a href="{% url 'worddetail' card.id %}">
+            <div class="vocab-card-title vocab-card-home">
+                <h2>{{card.vocab_word}}</h2>
+            </div>
+        </a>
+        <br>
+            <form  action="{% url 'bookmark' card.id %}" method="POST" id="bmk_form">
+                {% csrf_token %}
+                <input type="hidden" name="card-id" value="{{card.id}}">
+                <button type="submit" class="bookmark-button-front"><i class="fas fa-bookmark fa-3x"></i></button>
+            </form>
+    </div>
+    
+
+    {% endfor %}
+</div>

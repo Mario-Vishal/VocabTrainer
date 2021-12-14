@@ -1,0 +1,23 @@
+{% extends 'partials/_base_vocab_card.html' %}
+
+{% load static %}
+
+{% block bmk_edit %}
+    <div class="edit-bmk-button-area">
+        
+            <form  action="{% url 'bookmark' card.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="bookmark-button card-btn""><i class="fas fa-bookmark"></i></button>
+            </form>
+        
+               
+            <form class="edit-div" action="{% url 'edit_delete' card.id %}" method="GET">
+                {% csrf_token %}
+                <button class="card-btn"">edit</button>
+            </form>
+        
+    
+    </div>
+{% endblock %}
+    
+

@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="navbar-main">
+    <div class="navbar-link">
+        <a href="{% url 'home' %}">Home</a>
+    </div>
+    <div class="navbar-link">
+        <a href="{% url 'sets' %}">Revise</a>
+    </div>
+    <div class="navbar-link">
+        <a href="{% url 'addword' %}">Add Word</a>
+    </div>
+    <div class="navbar-link">
+        <a href="{% url 'viewbookmarked' %}">Bookmarked</a>
+    </div>
+    <div class="navbar-link">
+        <a href="{% url 'today' %}">Today's Added</a>
+    </div>
+    <div class="navbar-link navbar-link-last">
+        <a href="{% url 'search' %}">Search</a>
+    </div>
+   
+</div>

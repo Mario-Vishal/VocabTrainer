@@ -1,0 +1,37 @@
+{% extends 'vocab_trainer/base.html' %}
+{% load static %}
+
+    {% block homepage %}
+        <h1 class="page-header">Welcome To VocabTrainer</h1>
+        <br>
+        <div class="streak-div">
+            <h2 >Current streak : {{streak}}</h2>
+            <h2 >Longest streak : {{longest}}</h2>
+        </div>
+        <div class="card-flex">
+            <div class="home-total-words vocab-card-main home-card">
+                <h1>TOTAL WORDS ADDED</h1>
+                <h1 class="sub-num">{{total_words}}</h1>
+            </div>
+            <div class="home-total-sets vocab-card-main home-card">
+                <h1>TOTAL SETS</h1>
+                <h1 class="sub-num">{{total_sets}}</h1>
+            </div>
+           
+                <form  method="POST" action="{% url 'set' 10002 %}">
+                    <button class="home-card home-card-revise"  type="submit">
+                    {% csrf_token %}
+                    
+                    <h1>Let's see if you can remember last added words on {{last_seen}}</h1>
+                    <!-- <p><i>first word :</i></p>
+                    <h4>{{set_word.1}}</h4> -->
+                    
+                </button>
+                </form>
+           
+
+        </div>
+
+        <p class="foot">made by<br><b>Mario Vishal R</b></p>
+        
+    {% endblock %}
